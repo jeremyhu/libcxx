@@ -54,7 +54,8 @@ case $TRIPLE in
     then
         EXTRA_FLAGS="-nostdinc++ -std=c++11 -U__STRICT_ANSI__"
         LDSHARED_FLAGS="-o libc++.1.dylib \
-            -dynamiclib -nodefaultlibs -current_version 1 \
+            -dynamiclib -nodefaultlibs \
+            -current_version ${RC_ProjectSourceVersion} \
             -compatibility_version 1 \
             -install_name /usr/lib/libc++.1.dylib \
             -Wl,-reexport_library,/usr/lib/libc++abi.dylib \
